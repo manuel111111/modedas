@@ -1,0 +1,32 @@
+import javax.swing.*;
+
+public class PRUEBA {
+
+	public static void main(String[] args) {
+
+		OpcionesConversion conversion = new OpcionesConversion();
+		
+		while (true) {
+			String opcion = JOptionPane.showInputDialog(null, "Seleccione", "Menú", JOptionPane.PLAIN_MESSAGE, null,
+					new Object[] { "Conversor de Monedas", "Conversor de Medidas" }, "Elegir").toString();
+switch (opcion) { 
+case "Conversor de Monedas":
+	 String inpunt = JOptionPane.showInputDialog(null,"Ingrese un Valor");
+	 double valorRecibido = Double.parseDouble(inpunt);
+	 conversion.ConvertirMonedas(valorRecibido);
+	 
+	 int respuesta = JOptionPane.showConfirmDialog(null,"Deseas realizar otra conversión ?");
+	 if (JOptionPane.OK_OPTION == respuesta) {
+		 System.out.println("Seleccione opcion Afirmativa");
+		 
+		 
+	 }else {
+		 JOptionPane.showMessageDialog(null, "Programa Terminado");
+		 
+	 }
+	 
+	 break;
+}
+		}
+	}
+}
